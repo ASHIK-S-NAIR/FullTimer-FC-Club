@@ -25,11 +25,12 @@ const updatingDots = (currentDot, targetDot) => {
     targetDot.classList.add('current-slide');
 }
 
-const hideShowArrows = (track, prevButton, nextButton, targetIndex) => {
+const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+    console.log(slides.length);
     if(targetIndex === 0){
         prevButton.classList.add('isHidden');
         nextButton.classList.remove('isHidden');
-    }else if(targetIndex === track.length - 1){
+    }else if(targetIndex === slides.length - 1){
         prevButton.classList.remove('isHidden');
         nextButton.classList.add('isHidden');
     }else{
@@ -47,7 +48,7 @@ nextButton.addEventListener('click', e => {
     
     moveToSlide(track, currentSlide, nextSlide);
     updatingDots(currentDot, nextDot);
-    hideShowArrows(track, prevButton, nextButton, nextIndex);
+    hideShowArrows(slides, prevButton, nextButton, nextIndex);
 })
 
 prevButton.addEventListener('click', e => {
@@ -59,7 +60,7 @@ prevButton.addEventListener('click', e => {
     
     moveToSlide(track, currentSlide, prevSlide);
     updatingDots(currentDot, prevDot);
-    hideShowArrows(track, prevButton, nextButton, prevIndex);
+    hideShowArrows(slides, prevButton, nextButton, prevIndex);
 })
 
 dotsNavigation.addEventListener('click', e => {
@@ -73,7 +74,7 @@ dotsNavigation.addEventListener('click', e => {
 
     moveToSlide(track, currentSlide, targetSlide);
     updatingDots(currentDot, targetDot);
-    hideShowArrows(track, prevButton, nextButton, targetIndex);
+    hideShowArrows(slides, prevButton, nextButton, targetIndex);
 })
 
 
