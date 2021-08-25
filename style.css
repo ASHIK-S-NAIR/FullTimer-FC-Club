@@ -158,29 +158,30 @@ nav{
     height: calc(100vh - 4.25em);
     position: relative;
 }
-/* 
-.hero-section::before{
-
-} */
 
 .hero-carousel-button{
     outline: 0;
     border: 0;
-    font-size: 2rem;
+    font-size: 4rem;
     background-color: transparent;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: #fff;
+    color:  var(--secondary-color);
     z-index: 10;
+    transition: 0.3s color ease-out;
+}
+
+.hero-carousel-button:hover{
+    color: rgba(247, 247, 0, 0.41);
 }
 
 .hero-carousel-button-left{
-    left: 10px;
+    left: 0.5em;
 }
 
 .hero-carousel-button-right{
-    right: 10px;
+    right: 0.5em;
 }
 
 .hero-carousel-track-container{
@@ -214,7 +215,7 @@ nav{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     z-index: 9;
 }
 
@@ -244,41 +245,51 @@ nav{
 
 .hero-carousel-text{
     position: absolute;
-    left: 50%;
+    left: 10%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    /* transform: translateY(-70%); */
+    transform: translate(0, -50%);
     color: rgba(255, 255, 255,0.9);
-    font-size: 4.2rem;
+    font-size: 4rem;
     width: 50%;
-    font-weight: 1000;
-    /* border: 3px solid green; */
+    font-weight: 800;
     text-align: left;
     z-index: 10;
-    line-height: 4.2rem;
+    line-height: 4rem;
+}
+
+.hero-carousel-text span{
+    color: var(--secondary-color);
 }
 
 .hero-carousel-navigation{
     position: absolute;
+    right: 5%;
     bottom: 2em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     display: flex;
-    width: 100%;
     align-items: center;
     cursor: pointer;
     z-index: 9;
 }
 
 .hero-carousel-indicator{
-    width: 3em;
-    height: 0.3em;
-    background-color: rgba(205,18,60,0.5);
-    margin: 0 0.3em;
+    width: 1em;
+    height: 1em;
+    background-color: rgba(205,18,60,0.4);
+    margin: 0.8em 0;
+}
+
+.hero-carousel-indicator:hover{
+    background-color: rgba(205,18,60,1);
 }
 
 .hero-carousel-indicator.current-slide{
+    box-sizing: content-box;
     background-color: rgba(205,18,60,1);
+    /* border: 2px solid var(--secondary-color); */
+    border: 1px solid rgba(247,247,0,0.5);
 }
 
 .isHidden{
